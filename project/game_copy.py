@@ -144,7 +144,6 @@ def text_row(text, row):
     middle = colour(TEXT_BG, 48) + " " * pad
     used = 0
     for t, rgb in text:
-        t = t[:inner - used]
         middle += colour(rgb, 38) + t
         used += len(t)
     middle += " " * (inner - pad - used)
