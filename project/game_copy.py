@@ -101,7 +101,15 @@ def paste(picture, sprite, x, y):
     return new
 
 def scale_up(sprite):
-    return [[c for c in row for _ in range(2)] for row in sprite for _ in range(2)]
+    big = []
+    for row in sprite:
+        big_row = []
+        for c in row:
+            for i in range(2):
+                big_row.append(c)
+        for i in range(2):
+            big.append(big_row)
+    return big
 
 def half_block(top, bottom):
     #"▀" shows two pixels in one character: text colour on top, background below
