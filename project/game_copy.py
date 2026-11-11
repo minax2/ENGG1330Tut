@@ -126,7 +126,13 @@ def render_art(picture, rows):
     return lines
 
 def frame_cell(x, row):
-    return half_block(FRAME[row * 2][x] or TEXT_BG, FRAME[row * 2 + 1][x] or TEXT_BG)
+    top = FRAME[row * 2][x]
+    bottom = FRAME[row * 2 + 1][x]
+    if top is None:
+        top = TEXT_BG
+    if bottom is None:
+        bottom = TEXT_BG
+    return half_block(top, bottom)
 
 def text_row(text, row):
     #text is a string, or a list of (string, colour) pairs for more than one colour
