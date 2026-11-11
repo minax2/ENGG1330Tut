@@ -100,8 +100,8 @@ def paste(picture, sprite, x, y):
                 new[y + dy][x + dx] = rgb
     return new
 
-def scale_up(sprite, n):
-    return [[c for c in row for _ in range(n)] for row in sprite for _ in range(n)]
+def scale_up(sprite):
+    return [[c for c in row for _ in range(2)] for row in sprite for _ in range(2)]
 
 def half_block(top, bottom):
     #"▀" shows two pixels in one character: text colour on top, background below
@@ -434,7 +434,7 @@ def bedroom_picture(searched):
     return picture
 
 def closeup_picture(clue):
-    return paste(SPOTLIGHT, scale_up(ITEMS[clue["item"]], 2), 24, 2)
+    return paste(SPOTLIGHT, scale_up(ITEMS[clue["item"]]), 24, 2)
 
 def confront_picture(face, holding=None):
     picture = paste(CONFRONT_ROOM, FACES[face], 28, 6)
