@@ -168,8 +168,6 @@ def wrap(text):
 
 def get_key():
     ch = sys.stdin.read(1)
-    if ch == "\x03":   #Ctrl+C
-        raise KeyboardInterrupt
     if ch in ("\r", "\n"):
         return "enter"
     return ch.lower()
