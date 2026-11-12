@@ -17,7 +17,6 @@ def paeth(a, b, c):
         return b
     return c
 
-
 def load_png(filename):
     #returns a list of rows, each pixel is (r, g, b) or None if see-through
     with open(filename, "rb") as f:
